@@ -1,9 +1,19 @@
 import React from "react";
 import { Bell, Mail } from "lucide-react";
 
-const Topbar: React.FC = () => {
+interface TopProps {
+  onToggleSidebar: () => void;
+}
+
+const Topbar: React.FC<TopProps> = ({onToggleSidebar}) => {
   return (
     <header className="flex justify-between items-center p-4 border-b border-[#1c2335]">
+             <button
+          onClick={onToggleSidebar}
+          className="bg-white text-blue-600 px-3 py-1 rounded"
+        >
+          Toggle Menu
+        </button>
       <div className="flex text-left">
         <h1 className="text-2xl font-bold">GAAS</h1>
         <p className="text-xs text-gray-400">you decide, we provide</p>
